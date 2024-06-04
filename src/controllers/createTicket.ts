@@ -1,9 +1,9 @@
 import { Context } from "hono";
-import { createTicket, Ticket } from "../models/connectwise";
+import { ticketCreation, Ticket } from "../models/connectwise";
 
-export const addTicket = async (c: Context) => {
+export const createTicket = async (c: Context) => {
   const { summary, board, company, type } =
-    (await c.req.json()) as createTicket;
+    (await c.req.json()) as ticketCreation;
   const auth = c.req.header("Authorization");
   const clientId = c.req.header("clientId");
 

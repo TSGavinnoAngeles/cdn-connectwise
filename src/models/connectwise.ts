@@ -1,5 +1,5 @@
 //Ticket Creation Interface
-export interface createTicket {
+export interface ticketCreation {
   summary: string;
   board: boardCreateTicket;
   company: companyCreateTicket;
@@ -16,14 +16,14 @@ export interface typeCreateTicket {
 }
 
 //PUT Notes Interface
-export interface putNotes {
+export interface Notes {
   text: string;
   detailDescriptionFlag: boolean;
-  member: memberPutNotes;
+  member: memberNotes;
   id: number;
 }
 
-export interface memberPutNotes {
+export interface memberNotes {
   id: number;
 }
 

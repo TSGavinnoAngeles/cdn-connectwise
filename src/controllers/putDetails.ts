@@ -1,9 +1,9 @@
 import { Context } from "hono";
-import { putNotes, Ticket } from "../models/connectwise";
+import { Notes, Ticket } from "../models/connectwise";
 
 export const putDetails = async (c: Context) => {
   const { id, text, detailDescriptionFlag, member } =
-    (await c.req.json()) as putNotes;
+    (await c.req.json()) as Notes;
 
   const auth = c.req.header("Authorization");
   const clientId = c.req.header("clientId");

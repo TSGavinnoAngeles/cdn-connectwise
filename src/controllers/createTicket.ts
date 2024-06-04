@@ -32,7 +32,7 @@ export const createTicket = async (c: Context) => {
     const json = (await res.json()) as Ticket;
 
     if (res.ok) {
-      return c.json(json);
+      return c.json(json.id);
     }
 
     if (!res.ok) {

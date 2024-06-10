@@ -41,6 +41,6 @@ export const createTicket = async (c: Context) => {
     }
   } catch (error) {
     console.log(error);
-    return c.text("Error", { status: 500 });
+    return c.text(`Error: ${error}`, { status: 500 });
   }
 };

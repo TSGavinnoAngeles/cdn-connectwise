@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import { Document, uploadScreenshot } from "../models/connectwise";
+import { Document, uploadScreenshot } from "../models/document";
 
 export const uploadDocument = async (c: Context) => {
   const { file, id, title } = (await c.req.json()) as uploadScreenshot;

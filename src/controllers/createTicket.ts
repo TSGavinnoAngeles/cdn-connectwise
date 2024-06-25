@@ -1,5 +1,6 @@
 import { Context } from "hono";
-import { ticketCreation, Ticket } from "../models/connectwise";
+import { Ticket } from "../models/connectwise";
+import { ticketCreation } from "../models/ticket";
 
 export const createTicket = async (c: Context) => {
   const { summary, board, company, type } =

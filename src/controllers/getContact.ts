@@ -10,7 +10,7 @@ export const getContact = async (c: Context) => {
   }
   try {
     const res = await fetch(
-      `https://sandbox-na.myconnectwise.net/v4_6_release/apis/3.0/company/contacts`,
+      `https://sandbox-na.myconnectwise.net/v4_6_release/apis/3.0/company/contacts?pageSize=1000`,
       {
         method: "GET",
         headers: {
@@ -33,11 +33,9 @@ export const getContact = async (c: Context) => {
     }
 
     if (!res.ok) {
-      console.log(json);
       return c.text("Contacts not found", { status: 404 });
     }
   } catch (error) {
-    console.log(error);
     return c.text(`Error: ${error}`, { status: 500 });
   }
 };

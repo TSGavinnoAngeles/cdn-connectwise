@@ -5,6 +5,14 @@ export interface ticketCreation {
   company: companyCreateTicket;
   type: typeCreateTicket;
 }
+export interface createTicketAndContact {
+  summary: string;
+  board: boardCreateTicket;
+  company: companyCreateTicket;
+  type: typeCreateTicket;
+  contactName: string;
+}
+
 export interface boardCreateTicket {
   name: string;
 }

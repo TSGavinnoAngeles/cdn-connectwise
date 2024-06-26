@@ -2,7 +2,6 @@ import { Context } from "hono";
 import { Ticket } from "../models/connectwise";
 
 export const getTicket = async (c: Context) => {
-  //   const { id } = await c.req.json();
   const { id } = c.req.param();
   const auth = c.req.header("Authorization");
   const clientId = c.req.header("clientId");

@@ -71,22 +71,18 @@ export const createContact = async (c: Context) => {
           }
 
           if (!res.ok) {
-            console.log(json);
             return c.text("Failed to create the contact", { status: 400 });
           }
         } catch (error) {
-          console.log(error);
           return c.text(`Error: ${error}`, { status: 500 });
         }
       }
     }
 
     if (!res.ok) {
-      console.log(json);
       return c.text("Contacts not found", { status: 404 });
     }
   } catch (error) {
-    console.log(error);
     return c.text(`Error: ${error}`, { status: 500 });
   }
 };

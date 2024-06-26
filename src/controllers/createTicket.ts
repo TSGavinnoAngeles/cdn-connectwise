@@ -37,11 +37,9 @@ export const createTicket = async (c: Context) => {
     }
 
     if (!res.ok) {
-      console.log(json);
       return c.text("Failed to create the ticket", { status: 400 });
     }
   } catch (error) {
-    console.log(error);
     return c.text(`Error: ${error}`, { status: 500 });
   }
 };

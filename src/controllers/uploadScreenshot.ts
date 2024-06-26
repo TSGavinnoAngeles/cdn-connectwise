@@ -35,7 +35,6 @@ export const uploadDocument = async (c: Context) => {
     formData.append("recordId", id.toString()),
     formData.append("recordType", "Ticket");
 
-  console.log(formData);
   try {
     const res = await fetch(
       `https://sandbox-na.myconnectwise.net/v4_6_release/apis/3.0/system/documents`,
@@ -56,13 +55,11 @@ export const uploadDocument = async (c: Context) => {
     }
 
     if (!res.ok) {
-      console.log(json);
       return c.text(`${JSON.stringify(json)}`, {
         status: 400,
       });
     }
   } catch (error) {
-    console.log(error);
     return c.text(`Error: ${error}`, { status: 500 });
   }
 };

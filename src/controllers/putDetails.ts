@@ -37,13 +37,11 @@ export const putDetails = async (c: Context) => {
     }
 
     if (!res.ok) {
-      console.log(json);
       return c.text("Failed to put the description on the ticket", {
         status: 400,
       });
     }
   } catch (error) {
-    console.log(error);
     return c.text(`Error: ${error}`, { status: 500 });
   }
 };

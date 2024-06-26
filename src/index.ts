@@ -6,6 +6,7 @@ import { uploadDocument } from "./controllers/uploadScreenshot";
 import { getContact } from "./controllers/getContact";
 import { createContact } from "./controllers/createContact";
 import { cors } from "hono/cors";
+import { createTicketContact } from "./controllers/createTicketAndContact";
 
 const app = new Hono();
 
@@ -24,5 +25,7 @@ app.post("/uploadDocument", uploadDocument);
 app.get("/getContact", getContact);
 
 app.post("/createContact", createContact);
+
+app.post("/createTicketAndContact", createTicketContact);
 
 export default app;

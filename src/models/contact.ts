@@ -4,6 +4,7 @@ import { Info18 } from "./connectwise";
 export interface Create {
   firstName: string;
   lastName: string;
+  ignoreDuplicates: boolean;
 }
 
 export interface Contact {
